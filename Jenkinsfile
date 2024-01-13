@@ -14,6 +14,13 @@ pipeline {
         }
       }
     }
+    stage('test'){
+      steps{
+        script{
+          bat 'ng test'
+        }
+      }
+    }
 
   }
 }
