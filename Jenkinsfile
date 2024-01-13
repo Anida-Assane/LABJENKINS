@@ -17,7 +17,7 @@ pipeline {
     stage('test'){
       steps{
         script{
-          bat 'ng test'
+          bat 'ng test --no-watch --no-progress --browsers=ChromeHeadless'
         }
       }
     }
