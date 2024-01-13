@@ -6,6 +6,13 @@ pipeline {
         echo 'hello world'
       }
     }
+     stage('test'){
+      steps{
+        script{
+          bat 'ng test --no-watch --no-progress --browsers=ChromeHeadless'
+        }
+      }
+    }
     stage('build'){
       steps{
         script{
@@ -14,13 +21,7 @@ pipeline {
         }
       }
     }
-    stage('test'){
-      steps{
-        script{
-          bat 'ng test --no-watch --no-progress --browsers=ChromeHeadless'
-        }
-      }
-    }
+   
 
   }
 }
