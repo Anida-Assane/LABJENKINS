@@ -10,6 +10,7 @@ pipeline {
       steps{
         script{
           bat 'npm install'
+          bat 'ng build'
         }
       }
     }
