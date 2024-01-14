@@ -21,6 +21,27 @@ pipeline {
         }
       }
     }
+    stage('archive on nexus3'){
+      steps{
+        script{
+        nexusArtifactUploader(
+        nexusVersion: 'nexus3',
+        protocol: 'http',
+        nexusUrl: 'http://localhost:8081',
+        groupId: 'com.example',
+        version: version,
+        repository: 'JenkinksAngularLab',
+        credentialsId: 'nexusCredential',
+        artifacts: [
+            [artifactId: labJenkins,
+             classifier: '',
+             file: 'dist' + version + '.zip',
+             type: 'zip']
+        ]
+     )
+        }
+      }
+    }
    
 
   }
