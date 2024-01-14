@@ -29,13 +29,13 @@ pipeline {
         protocol: 'http',
         nexusUrl: 'http://localhost:8081',
         groupId: 'com.example',
-        version: version,
+        version: 1,
         repository: 'JenkinksAngularLab',
         credentialsId: 'nexusCredential',
         artifacts: [
             [artifactId: labJenkins,
              classifier: '',
-             file: 'dist' + version + '.zip',
+             file: 'dist'+ version +'.zip',
              type: 'zip']
         ]
      )
